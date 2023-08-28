@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	height: 100%;
+	background-color: #4a5568;
+	width: fit-content;
+	padding: 10px;
+}
+
+.item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #f6ad55;
+	transition: width 0.3s, height 0.3s, border-radius 0.3s;
+}
+
+.item:hover .circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 0.25rem;
+}
+
+.item:hover::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: 50%;
+	left: calc(100% + 24px);
+	transform: translateY(-50%);
+	padding: 0.25rem;
+	background-color: #000;
+	color: #fff;
+	border-radius: 0.25rem;
+	white-space: nowrap;
+}
+
+.item:hover .icon {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.circle:hover {
+	background-color: #7A2D5F;
+}
+
+.item:hover::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.item::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: 50%;
+	left: calc(100% + 24px);
+	transform: translateY(-50%);
+	padding: 0.25rem;
+	background-color: #000;
+	color: #fff;
+	border-radius: 0.25rem;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s, visibility 0.3s;
+}
