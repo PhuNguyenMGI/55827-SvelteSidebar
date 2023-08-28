@@ -1,9 +1,35 @@
 <script>
-	import IconButton from '$lib/components/IconButton.svelte';
+	import Sad from '$lib/images/sad-outline.svg';
+	import Happy from '$lib/images/happy-outline.svg';
+	import CodeSlash from '$lib/images/code-slash-outline.svg';
+	import Sync from '$lib/images/sync-outline.svg';
+	import Sidebar from '$lib/components/Sidebar.svelte';
+	const data = [
+		{
+			name: 'Sad',
+			src: Sad,
+			item: 'item 1 🤔',
+		},
+		{
+			name: 'Happy',
+			src: Happy,
+			item: 'item 2 🤔',
+		},
+		{
+			name: 'Code Slash',
+			src: CodeSlash,
+			item: 'item 3 🤔',
+		},
+		{
+			name: 'Sync',
+			src: Sync,
+			item: 'item 4 🤔',
+		}
+	]
 </script>
 
 <section>
-	<IconButton />
+	<Sidebar data={data} />
 	<div class="novel ml-[60px] px-6">
 		<h1 class="chapter-title">Chapter 1: The Lorem Ipsum Novel</h1>
 		<p class="paragraph">
